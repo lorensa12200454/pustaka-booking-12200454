@@ -36,9 +36,15 @@ $routes->get('/hello', 'SelamatDatang::hal_awal');
 $routes->get('/login', 'SelamatDatang::beranda_login');
 $routes->post('/login', 'Login::cekLogin');
 $routes->get('/daftar-member','SelamatDatang::daftar_member');
+$routes->get('/beranda','SelamatDatang::hal_beranda', ['filter'=>'auth']);
+$routes->get('/logout', function(){
+    services::session()->destroy();
+    return redirect()->to('/login');
+});
+
 /*
- * --------------------------------------------------------------------
  * Additional Routing
+ * 
  * --------------------------------------------------------------------
  *
  * There will often be times that you need additional routing and you

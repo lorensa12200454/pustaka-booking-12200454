@@ -8,16 +8,33 @@
             </div>
             <div class="card-body">
                 <div class="form-floating">
-                    <input id="txtEmail" class="form-control" placeholder="Email" type="text" name="email" />
+                    <input id="txtEmail" class="form-control" placeholder="Email" 
+                    type="text" name="email" />
                     <label for="txtEmail">Email</label>
+                    <?php if($vd == null ? '' :$vd->getError('email')){ ?>
+                        <div class="alert alert-danger">
+                    <?php
+                    echo($vd == null ? '':$vd->getError('email'))
+                ?>
                 </div>
+                <?php } ?>
+                
                 <div class="form-floating">
-                    <input id="txtPass" class="form-control" placeholder="Password" type="password" name="sandi" />
+                    <input id="txtPass" class="form-control" 
+                    placeholder="Password" 
+                    value="<?=$sandi ?? ''?>"
+                    type="password" name="sandi" />
                     <label for="txtPass">Kata Sandi</label>
+                    <?php if($vd == null ? '' :$vd->getError('sandi')){ ?>
+                        <div class="alert alert-danger">
+                    <?php
+                    echo($vd == null ? '':$vd->getError('sandi'))
+                ?>
                 </div>
+                <?php } ?>
                 <button class="btn btn-primary mt-2">Login</button>
             </div>
         </div>
     </div>
 </form>
-<?= $this->endSection() ?>
+<?=$this->endSection()?>

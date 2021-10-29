@@ -10,25 +10,25 @@ class Pengguna extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type'            => 'INT', 'constraint' => 4,
-                'unsigned'        => true,
-                'auto_increment'  => true
+                'type'          => 'INT','constraint' =>4,
+                'unsigned'      => true,
+                'auto_increment'=> true
             ],
             'nama' => [
-                'type'            => 'VARCHAR', 'constraint' => 50,
-                'null'            => false
+                'type'          => 'VARCHAR', 'constraint' => 50,
+                'null'          => false
             ],
             'password' => [
-                'type'            => 'VARCHAR', 'constraint' => 32,
-                'null'            => false
+                'type'          => 'VARCHAR', 'constraint' => 32,
+                'null'          => false
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('pengguna_12200454');
+        $this->forge->createTable('pengguna');
     }
 
     public function down()
     {
-        $this->forge->dropTable('pengguna_12200454');
+        $this->forge->droptable('pengguna');
     }
 }
