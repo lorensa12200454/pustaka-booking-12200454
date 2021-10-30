@@ -2,8 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\pengguna12200454;
-use Config\services;
+use App\Models\Pengguna12200085;
 
 class Login extends BaseController
 {
@@ -35,7 +34,7 @@ class Login extends BaseController
             return redirect()->to('/Login');
         } else {
 
-            $vl = (new Pengguna12200454())->cekLogin($email, $sandi);
+            $vl = (new Pengguna12200085())->cekLogin($email, $sandi);
 
             if ($vl == null) {
                 return redirect()->to('/login')->with('error', 'User dan sandi salah');
@@ -46,7 +45,7 @@ class Login extends BaseController
         }
     }
 
-    public function beranda(){
-
+    public function beranda()
+    {
     }
 }
