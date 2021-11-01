@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Config;
 
 // Create a new instance of our RouteCollection class.
