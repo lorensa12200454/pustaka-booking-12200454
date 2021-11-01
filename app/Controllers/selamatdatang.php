@@ -7,7 +7,6 @@ class SelamatDatang extends BaseController {
     public function hal_awal(){
          return 'hello saya belajar CI4';
     }
-
     public function beranda_login(){
         return view('halaman/login', [
             'vd' => $this->session->getFlashdata('validator'),

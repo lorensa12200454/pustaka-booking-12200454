@@ -7,7 +7,6 @@ use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 
-
 class Filters extends BaseConfig
 {
     /**
