@@ -6,8 +6,7 @@ use App\Models\Pengguna12200454;
 
 class Login extends BaseController
 {
-    public function cekLogin()
-    {
+    public function cekLogin(){
         $e = $this->request->getPost('email');
         $s = $this->request->getPost('sandi');
         return view('halaman/beranda', ['email' => $e, 'sandi' => $s]);
@@ -25,7 +24,7 @@ class Login extends BaseController
                 'required' => 'Sandi tidak boleh kosong'
             ]
         ]);
-
+        
         $this->session->set('email', $email);
         $this->session->set('sandi', $sandi);
 
