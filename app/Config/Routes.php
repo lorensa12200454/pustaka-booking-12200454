@@ -58,3 +58,10 @@ $routes->get('/logout', function(){
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+$routes->get('/pengguna-list', 'PenggunaController::index', ['filter'=>'auth']);
+$routes->get('/pengguna', 'PenggunaController::form', ['filter'=>'auth']);
+$routes->get('/pengguna/(:num)', 'PenggunaController::edit/$1', ['filter'=>'auth']);
+$routes->post('/pengguna', 'PenggunaController::simpan', ['filter'=>'auth']);  
+$routes->patch('/pengguna', 'PenggunaController::patch', ['filter'=>'auth']);
+$routes->delete('/pengguna', 'PenggunaController::delete', ['filter'=>'auth']);

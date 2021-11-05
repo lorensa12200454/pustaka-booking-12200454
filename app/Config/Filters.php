@@ -1,7 +1,11 @@
 <?php
 
 namespace Config;
-use CodeIgniter\filters\Auth;
+
+use App\filters\Auth;
+use App\Filters\AutoIn;
+use App\Filters\AotuLogin;
+
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
